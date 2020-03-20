@@ -29,15 +29,6 @@
 				"userProperties": []
 			},
 			{
-				"name": "EXECUTE-FormProcessor-TransformerInspectionReport",
-				"type": "ExecutePipeline",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"waitOnCompletion": true
-				}
-			},
-			{
 				"name": "SWITCH-FormType",
 				"type": "Switch",
 				"dependsOn": [
@@ -52,7 +43,22 @@
 				"typeProperties": {
 					"cases": [
 						{
-							"value": "FormType=TransformerInspectionReport"
+							"value": "FormType=TransformerInspectionReport",
+							"activities": [
+								{
+									"name": "EXECUTE-FormProcessor-TransformerInspectionReport",
+									"type": "ExecutePipeline",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"pipeline": {
+											"referenceName": "FormProcessor-TransformerInspectionReport",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true
+									}
+								}
+							]
 						},
 						{
 							"value": "FormType=TransformerInspectionRequest"
@@ -72,15 +78,6 @@
 					}
 				],
 				"userProperties": []
-			},
-			{
-				"name": "EXECUTE-FormProcessor-TransformerOrderForm",
-				"type": "ExecutePipeline",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"waitOnCompletion": true
-				}
 			}
 		],
 		"annotations": []
