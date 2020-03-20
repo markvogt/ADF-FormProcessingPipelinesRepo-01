@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach-PDF-in-Monitored-ADLS",
+				"name": "ForEach-PDF-in-Queue",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": []
@@ -31,13 +31,26 @@
 				}
 			},
 			{
-				"name": "Switch1",
+				"name": "SWITCH-FormType",
 				"type": "Switch",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
-					"cases": []
+					"cases": [
+						{
+							"value": "FormType=TransformerInspectionReport"
+						},
+						{
+							"value": "FormType=TransformerInspectionRequest"
+						}
+					]
 				}
+			},
+			{
+				"name": "SET-VAR-FormType",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": []
 			}
 		],
 		"annotations": []
