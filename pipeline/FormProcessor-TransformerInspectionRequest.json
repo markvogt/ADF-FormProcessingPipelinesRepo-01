@@ -1,5 +1,5 @@
 {
-	"name": "TransformerInspectionFormProcessor",
+	"name": "FormProcessor-TransformerInspectionRequest",
 	"properties": {
 		"activities": [
 			{
