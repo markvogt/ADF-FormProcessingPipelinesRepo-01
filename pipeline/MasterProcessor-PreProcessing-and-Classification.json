@@ -72,6 +72,15 @@
 					}
 				],
 				"userProperties": []
+			},
+			{
+				"name": "EXECUTE-FormProcessor-TransformerOrderForm",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"annotations": []
